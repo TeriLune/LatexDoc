@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{report}
+\emergencystretch=3em
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{microtype}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\title{Bioróżnorodność i funkcjonowanie ekosystemów}
+\author{Jakub Zwarycz}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter*{Streszczenie}
+\addcontentsline{toc}{chapter}{Streszczenie}
+Tekst przedstawia rolę bioróżnorodności w funkcjonowaniu ekosystemów oraz zagrożenia wynikające z działalności człowieka. Omawia poziomy bioróżnorodności, usługi ekosystemowe, znaczenie dla stabilności środowiska oraz metody ochrony różnorodności biologicznej.
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\chapter{Różnorodność biologiczna a funkcjonowanie przyrody}
+\input{rozdzial1.tex}
+
+\chapter{Zagrożenia i spadek bioróżnorodności}
+\input{rozdzial2.tex}
+
+\chapter{Ochrona i zarządzanie ekosystemami}
+\input{rozdzial3.tex}
+
+\cleardoublepage
+\chapter*{Wnioski}
+\addcontentsline{toc}{chapter}{Wnioski}
+\input{wnioski.tex}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliografia}
+\input{bibliografia.tex}
+
+\end{document}
