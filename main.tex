@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,twoside]{report}
 \emergencystretch=3em
 
 \usepackage[utf8]{inputenc}
@@ -10,6 +10,11 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{bibliografia.bib}
 
 \hypersetup{
     colorlinks=true,
@@ -18,8 +23,28 @@
     citecolor=black
 }
 
+\newcommand{\AuthorName}{Jakub Zwarycz}
+
+\makeatletter
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter.\ #1}{}%
+}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{16pt}
+\fancyhead[RO,LE]{\textbf{\AuthorName}}
+\fancyhead[LO,RE]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}               
+  \fancyfoot[C]{\thepage} 
+}
+
 \title{Bioróżnorodność i funkcjonowanie ekosystemów}
-\author{Jakub Zwarycz}
+\author{\AuthorName}
 \date{2025}
 
 \begin{document}
@@ -28,10 +53,12 @@
 \tableofcontents
 
 \chapter*{Streszczenie}
+\phantomsection
 \addcontentsline{toc}{chapter}{Streszczenie}
-Tekst przedstawia rolę bioróżnorodności w funkcjonowaniu ekosystemów oraz zagrożenia wynikające z działalności człowieka. Omawia poziomy bioróżnorodności, usługi ekosystemowe, znaczenie dla stabilności środowiska oraz metody ochrony różnorodności biologicznej.
 
-\cleardoublepage
+Tekst przedstawia rolę bioróżnorodności w funkcjonowaniu ekosystemów oraz zagrożenia wynikające z działalności człowieka. 
+Omawia poziomy bioróżnorodności, usługi ekosystemowe, znaczenie dla stabilności środowiska oraz metody ochrony różnorodności biologicznej.
+
 \pagenumbering{arabic}
 
 \chapter{Różnorodność biologiczna a funkcjonowanie przyrody}
@@ -43,12 +70,14 @@ Tekst przedstawia rolę bioróżnorodności w funkcjonowaniu ekosystemów oraz z
 \chapter{Ochrona i zarządzanie ekosystemami}
 \input{rozdzial3.tex}
 
-\cleardoublepage
 \chapter*{Wnioski}
+\phantomsection
 \addcontentsline{toc}{chapter}{Wnioski}
 \input{wnioski.tex}
 
 \cleardoublepage
-\input{bibliografia.tex}
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography
 
 \end{document}
